@@ -1,19 +1,27 @@
 function fallDetected() {
-
+    navigator.vibrate([1000, 500, 2000, 500, 3000]);
+    var my_media = new Media("sounds/fall-detected.wav",
+        function () {
+            console.log("playAudio():Audio Success");
+        },
+        function (err) {
+            console.log("playAudio():Audio Error: " + err);
+        }
+    );
+    my_media.play();
 }
-
 
 var app = {
     // Application Constructor
-    initialize: function() {
-        this.bindEvents();
+    initialize: function(odr) {
+        this.bindEvents(odr);
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+    bindEvents: function(odr) {
+        document.addEventListener('deviceready', odr, false);
     },
     // deviceready Event Handler
     //
@@ -32,4 +40,3 @@ var app = {
     }
 };
 
-app.initialize();
