@@ -16,13 +16,16 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h1>Standby.</h1>
+            <h1>Standby. (<span id="rumble"></span>)</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
             <br>
             <a href="falldetected.html" class="btn btn-primary btn-lg btn-block">test</a>
+        </div>
+        <div class="col-xs-12" id="diagram">
+
         </div>
     </div>
 </div>
@@ -31,7 +34,12 @@
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script>
+//    standby();
+    app.initialize(standby);
+</script>
 </body>
 </html>
